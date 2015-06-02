@@ -1,5 +1,0 @@
-Instead of having a start and an end, I should instead have a start and a size.
-	Although this won't make much of a difference security wise (some simple checks for data >127 should be enough for data sent), this could simplify the code by a bit
-
-
-Instead 
