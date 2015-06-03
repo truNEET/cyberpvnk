@@ -10,6 +10,7 @@ namespace state {
 class Game : public State
 {
 public:
+	Game();
 	void draw(const sf::RenderWindow &rwin);
 	void update(const sf::Time &dt);
 };
