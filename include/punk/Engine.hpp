@@ -19,6 +19,8 @@ public:
 	static std::shared_ptr<Engine> getSingleton();
 	int run(int argc, char **argv);
 	void addEventListener(const sf::Event::EventType &type, std::function<void(sf::Event&)> cb);
+	void removeEventListeners(const sf::Event::EventType &type);
+	void removeEventListeners(const std::vector<sf::Event::EventType> &events);
 private:
 	static std::shared_ptr<Engine> m_instance;
 	std::map<sf::Event::EventType, std::vector<std::function<void(sf::Event&)>>> m_events;

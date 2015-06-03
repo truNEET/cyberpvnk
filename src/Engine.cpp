@@ -23,6 +23,20 @@ void Engine::addEventListener(const sf::Event::EventType &type, std::function<vo
 	m_events[type].push_back(cb);
 }
 
+void Engine::removeEventListeners(const sf::Event::EventType &type)
+{
+	if (m_events.find(type) != m_events.end()) {
+		m_events[type].clear();
+	}
+}
+
+void Engine::removeEventListeners(const std::vector<sf::Event::EventType> &events)
+{
+	for (auto &event : events) {
+		removeEventListeners(event);
+	}
+}
+
 int Engine::run(int argc, char **argv)
 {
 	m_rwin.create(sf::VideoMode(1067, 600, 32), "cyberpvnk", !sf::Style::Resize | sf::Style::Close);
