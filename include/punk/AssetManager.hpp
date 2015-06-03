@@ -5,6 +5,8 @@
 
 namespace pk {
 
+/* TODO: Support for custom asset package format */
+
 class AssetManager
 {
 public:
