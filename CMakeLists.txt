@@ -8,6 +8,8 @@ include_directories ("include")
 
 add_executable (${OUTPUT}
 	src/state/Game.cpp
+	src/input/Player.cpp
+	src/InputController.cpp
 	src/Engine.cpp
 	src/main.cpp
 )
