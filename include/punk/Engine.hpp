@@ -22,7 +22,7 @@ public:
 private:
 	static std::shared_ptr<Engine> m_instance;
 	std::map<sf::Event::EventType, std::vector<std::function<void(sf::Event&)>>> m_events;
-	std::stack<State> m_states;
+	std::stack<std::shared_ptr<State>> m_states;
 	sf::RenderWindow m_rwin;
 };
 
