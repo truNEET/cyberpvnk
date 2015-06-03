@@ -1,3 +1,4 @@
+#include <punk/state/Game.hpp>
 #include <punk/Engine.hpp>
 
 namespace pk {
@@ -26,6 +27,8 @@ int Engine::run(int argc, char **argv)
 {
 	m_rwin.create(sf::VideoMode(1067, 600, 32), "cyberpvnk", !sf::Style::Resize | sf::Style::Close);
 
+	m_states.push(std::make_shared<state::Game>());
+
 	addEventListener(sf::Event::Closed, [&] (const sf::Event &event) -> void {
 		m_rwin.close();
 	});
@@ -40,6 +43,8 @@ int Engine::run(int argc, char **argv)
 			}
 		}
 		m_rwin.clear();
+		m_states.top()->draw(m_rwin);
+		m_states.top()->update(sf::seconds(1));
 		m_rwin.display();
 	}
 
